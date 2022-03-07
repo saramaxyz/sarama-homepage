@@ -1,23 +1,30 @@
+import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Button: React.FC = props => (
-  <a className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded p-2 font-semibold">{props.children}</a>
+  <Link href='/get-started'><div className="bg-gradient-to-r from-blue-500 to-blue-400 text-white rounded p-4 font-bold">{props.children}</div></Link>
 )
 
 const Hero = () => (
-  <div className='h-screen flex flex-col items-center text-white' style={{ backgroundImage: 'url(/desk.png)', maxHeight: '894px' }}>
+  <div>
     <Image 
       src='/desk.png' 
       layout='fill'
+      objectFit='cover'
+      objectPosition='center'
+      className='z-0'
     />
-    <div className="flex justify-between w-full m-5 p-5">
-      <div className='font-semibold text-3xl'>Sarama</div>
-      <Button>Get Access</Button>
-    </div>
-    <div className='mt-32 font-bold text-5xl text-center'>Solution<br />For Your Pet</div>
-    <div className='mt-6'>Sarama develops software to add to your dog products</div>
-    <div className='mt-16'>
-      <Button>Get Access</Button>
+    <div className='h-screen flex flex-col items-center text-white z-10 relative'>
+      <div className="flex justify-between w-full m-5 p-12">
+        <div className='font-semibold text-3xl'>Sarama</div>
+        <Button>Get Access</Button>
+      </div>
+      <div className='mt-32 font-bold text-5xl text-center'>Solution<br />For Your Pet</div>
+      <div className='mt-6'>Sarama develops software to add to your dog products</div>
+      <div className='mt-16'>
+        <Button>Get Access</Button>
+      </div>
     </div>
   </div>
 )
@@ -40,8 +47,10 @@ const TrustedBy = () => (
 
 const YourProducts = () => (
   <div className='flex flex-col items-center'>
-    <div className="flex text-6xl font-semibold"><span>You</span>&nbsp;<span className="text-blue-500">make</span>&nbsp;<span>products dog people love. Now</span>&nbsp;<span className="text-blue-500">add AI to</span>&nbsp;<span>make it smarter.</span></div>
-    <div className='container mt-10'>More dog parents are increasingly concerned in what their dogs are doing all day long. We understand their frustration so we created a way to do something. We're a team of engineers, scientists, and researchers from across the world focused on understanding our dogs' behaviors. Together we built a real-time system to decode barks and body language to determine emotion. Integrate our software into your products to give every dog parent instant feedback about their dogs.</div>
+    <div className="text-6xl font-semibold w-2/5 text-center">
+      <span>You</span>&nbsp;<span className="text-blue-500">make</span>&nbsp;<span>products dog people love. Now</span>&nbsp;<span className="text-blue-500">add AI to</span>&nbsp;<span>make it smarter.</span>
+    </div>
+    <div className='container mt-10 font-normal'>More dog parents are increasingly concerned in what their dogs are doing all day long. We understand their frustration so we created a way to do something. We're a team of engineers, scientists, and researchers from across the world focused on understanding our dogs' behaviors. Together we built a real-time system to decode barks and body language to determine emotion. Integrate our software into your products to give every dog parent instant feedback about their dogs.</div>
   </div>
 )
 
@@ -52,21 +61,81 @@ const DogImage = () => (
 )
 
 const WorkProcess = () => (
-  <div className="flex flex-col items-center">
+  <div className="flex flex-col items-center container mx-auto">
     <div className='flex text-6xl font-semibold'>
       <div>Work</div>&nbsp;<div className='text-blue-500'>Process</div>
     </div>
-    <div className="flex">
-      <div>Dog Bark Decoding</div>
-      <div>Dog Image</div>
+    <div className='pt-24 pb-24'>
+      <div className="flex">
+        <div className='w-1/2'>
+          <div>Icon</div>
+          <div className="font-bold text-2xl pb-5 border-b-2 border-blue-800">Dog Bark Decoding</div>
+          <div className='pt-5'>
+            Mirophones are strategically placed to capture barks along with AI trained to find specific bark patterns for individual dogs.
+          </div>
+        </div>
+        <div className='w-1/2 relative'>
+            <Image 
+              className='absolute'
+              src='/dog-1/blob.svg' 
+              width='490' 
+              height='460' 
+              objectFit='cover'
+              objectPosition='center'
+            />
+            <Image 
+              className='absolute'
+              src='/dog-1/dog.svg' 
+              height='330' 
+              width='400'
+            />
+        </div>
+      </div>
+      <div className="flex">
+        <div className='w-1/2'>Dog Image</div>
+        <div className='w-1/2'>
+          <div>Icon</div>
+          <div className="font-bold text-2xl pb-5 border-b-2 border-blue-800">Body Language Decoding</div>
+          <div className='pt-5'>
+            We use motion sensors to track tail wagging and body orientation to determine emotional context.
+          </div>
+        </div>
+      </div>
+      <div className="flex">
+        <div className='w-1/2'>
+          <div>Icon</div>
+          <div className="font-bold text-2xl pb-5 border-b-2 border-blue-800">Aggression Detection</div>
+          <div className='pt-5'>
+            With better understanding of emotions and bark decoding we create predictive models around aggression.
+          </div>
+        </div>
+        <div className='w-1/2'>Dog Image</div>
+      </div>
     </div>
-    <div className="flex">
-      <div>Dog Image</div>
-      <div>Body Language Decoding</div>
+  </div>
+)
+
+interface CardProps {
+  title: string;
+  description: string;
+  action?: JSX.Element;
+}
+
+const Card: React.FC<CardProps> = props => (
+  <div className="bg-white rounded shadow-2xl flex flex-col items-center w-96 shadow-blue-100">
+    <div className='h-72'>
+      Dog Image
     </div>
-    <div className="flex">
-      <div>Aggression Detection</div>
-      <div>Dog Image</div>
+    <div className='h-72 flex flex-col items-center'>
+      <div className='font-semibold text-xl pt-10 tracking-wide'>{props.title}</div>
+      <div className='grow'>
+        <div className='pt-8 pl-9 pr-9 tracking-wide'>
+          {props.description}
+        </div>
+      </div>
+      <div className='pb-5'>
+        {props.action}
+      </div>
     </div>
   </div>
 )
@@ -75,45 +144,24 @@ const LearnMore = () => (
   <div className="flex flex-col items-center pb-24" style={{ backgroundImage: 'url(/white_background.png)', maxHeight: '1032px' }}>
     <div className='text-6xl font-semibold m-24'>Looking To Learn More</div>
     <div className="flex space-x-6">
-      <div className="bg-white rounded shadow-2xl p-5 flex flex-col items-center">
-        <div>Image</div>
-        <div className='font-semibold text-lg'>How our sensors work</div>
-        <div>Scientific papers on sensor tech for dogs.</div>
-        <div>
-          <Button>Read More</Button>
-        </div>
-      </div>
-      <div className="bg-white rounded shadow-2xl p-5 flex flex-col items-center">
-        <div>Image</div>
-        <div className='font-semibold text-lg'>Can you actually talk to dogs</div>
-        <div>Learn how dog communication actually works.</div>
-        <div>
-          <Button>Read More</Button>
-        </div>
-      </div>
-      <div className="bg-white rounded shadow-2xl p-5 flex flex-col items-center">
-        <div>Image</div>
-        <div className='font-semibold text-lg'>Come decode dogs with us</div>
-        <div>Chat with us on our discord server to share lessions of dog parenting.</div>
-        <div>
-          <Button>Join Our Discord</Button>
-        </div>
-      </div>
+      <Card title="How our sensors work" description="Scientific papers on sensor tech for dogs." action={<Button>Read More</Button>} />
+      <Card title="Can you actually talk to dogs" description="Learn how dog communication actually works." action={<Button>Read More</Button>} />
+      <Card title='Come decode dogs with us' description='Chat with us on our discord server to share lessions of dog parenting.' action={<Button>Join Our Discord</Button>} />
     </div>
   </div>
 )
 
 const PoweredApp = () => (
-  <div className='h-screen flex flex-col items-center text-white' style={{ backgroundImage: 'url(/vr.png)', maxHeight: '976px' }}>
-    <div className='text-3xl font-semibold'>AI Powered App Built on Powerful Sensors</div>
-    <div className="flex">
-      <div className='flex flex-col'>
+  <div className='h-screen flex flex-col items-center text-white w-full' style={{ backgroundImage: 'url(/vr.png)', maxHeight: '976px' }}>
+    <div className='text-3xl font-semibold text-center p-24'>AI Powered App <br /> Built on Powerful Sensors</div>
+    <div className="flex flex-col container mx-auto">
+      <div className='flex flex-col w-full text-right'>
         <div className="font-semibold">Dog Parents</div>
-        <div className='text-right'>Get peace of mind shopping online knowing<br />their purchase will continuously monitor<br />marine ecosystems</div>
+        <div className=''>Get peace of mind shopping online knowing<br />their purchase will continuously monitor<br />marine ecosystems</div>
       </div>
-      <div className='flex flex-col'></div><div>
+      <div className='flex flex-col w-full text-left'>
         <div className="font-semibold">Dogs</div>
-        <div className='text-left'>Sarma provides marketing material to<br />showcase your values alignment with<br />dog stress reduction</div>
+        <div className=''>Sarma provides marketing material to<br />showcase your values alignment with<br />dog stress reduction</div>
       </div>
     </div>
     <div className="m-16">
@@ -132,11 +180,11 @@ const CallToAction = () => (
 )
 
 const Footer = () => (
-  <footer className='p-10'>
-    <div className="flex">
+  <footer className='p-10 text-gray-500'>
+    <div className="flex justify-between">
       <div className="flex flex-col">
-        <div className="font-bold">Sarama</div>
-        <div className='flex flex-col space-y-4'>
+        <div className="font-semibold text-5xl">Sarama</div>
+        <div className='flex flex-col space-y-4 font-medium pt-7'>
           <div>+1 732 309-8870</div>
           <div>hello@aionthebeach.com</div>
           <div>1235 Florida St, Unit A, San Francisco, CA</div>
@@ -144,39 +192,39 @@ const Footer = () => (
       </div>
       <div className="flex space-x-24">
         <div className="flex flex-col">
-          <div className="font-bold">Services</div>
-          <div className='flex flex-col space-y-4'>
-            <div>Small Business</div>
-            <div>Enterprise</div>
-            <div>Pricing</div>
+          <div className="font-semibold text-2xl">Services</div>
+          <div className='flex flex-col space-y-4 font-medium pt-7'>
+            <Link href='/small-business'>Small Business</Link>
+            <Link href='/enterprise'>Enterprise</Link>
+            <Link href='/pricing'>Pricing</Link>
           </div>
         </div>
         <div className="flex flex-col">
-          <div className="font-bold">Products</div>
-          <div className='flex flex-col space-y-4'>
-            <div>App</div>
+          <div className="font-semibold text-2xl">Products</div>
+          <div className='flex flex-col space-y-4 font-medium pt-7'>
+            <Link href='/app'>App</Link>
           </div>
         </div>
         <div className="flex flex-col">
-          <div className="font-bold">Resources</div>
-          <div className='flex flex-col space-y-4'>
-            <div>FAQ</div>
+          <div className="font-semibold text-2xl">Resources</div>
+          <div className='flex flex-col space-y-4 font-medium pt-7'>
+            <Link href='/faq'>FAQ</Link>
           </div>
         </div>
         <div className="flex flex-col">
-          <div className="font-bold">About Us</div>
-          <div className='flex flex-col space-y-4'>
-            <div>Team</div>
-            <div>Press</div>
-            <div>Blog</div>
+          <div className="font-semibold text-2xl">About Us</div>
+          <div className='flex flex-col space-y-4 font-medium pt-7'>
+            <Link href='/team'>Team</Link>
+            <Link href='/press'>Press</Link>
+            <Link href='/blog'>Blog</Link>
           </div>
         </div>
       </div>
     </div>
-    <div className='flex justify-center space-x-10 w-full mt-16'>
+    <div className='flex justify-center space-x-10 w-full mt-16 text-xs'>
       <div>Copyright 2022, AI on the Beach LLC</div>
-      <div>Privacy Policy</div>
-      <div>{'Terms & Conditions'}</div>
+      <Link href='/privacy-policy'>Privacy Policy</Link>
+      <Link href='/terms'>{'Terms & Conditions'}</Link>
     </div>
   </footer>
 )
