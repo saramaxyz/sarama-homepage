@@ -37,9 +37,9 @@ const TrustedBy = () => (
 const YourProducts = () => (
   <div className='flex flex-col items-center'>
     <div className="text-6xl font-semibold w-2/5 text-center">
-      <span>You</span>&nbsp;<span className="text-blue-500">make</span>&nbsp;<span>products dog people love. Now</span>&nbsp;<span className="text-blue-500">add AI to</span>&nbsp;<span>make it smarter.</span>
+      <span>You</span>&nbsp;<span className="text-red-500">love</span>&nbsp;<span>your dog.</span>
     </div>
-    <div className='container mt-10 font-normal'>More dog parents are increasingly concerned in what their dogs are doing all day long. We understand their frustration so we created a way to do something. We're a team of engineers, scientists, and researchers from across the world focused on understanding our dogs' behaviors. Together we built a real-time system to decode barks and body language to determine emotion. Integrate our software into your products to give every dog parent instant feedback about their dogs.</div>
+    <div className='container mt-10 font-normal items-left'>Our goal is to help dog parents better understand their dogs&apos; behavior by creating a system that can decode their barks and body language. Our software can be integrated into products to give dog parents instant feedback about their dogs&apos; emotions.</div>
   </div>
 )
 
@@ -58,9 +58,9 @@ const WorkProcess = () => (
       <div className="flex">
         <div className='w-1/2'>
           <div>Icon</div>
-          <div className="font-bold text-2xl pb-5 border-b-2 border-blue-800">Dog Bark Decoding</div>
+          <div className="font-bold text-2xl pb-5 border-b-2 border-blue-800">Body Language Decoding</div>
           <div className='pt-5'>
-            Mirophones are strategically placed to capture barks along with AI trained to find specific bark patterns for individual dogs.
+            We are using AI to detect what your dog is doing and whether they're doing something they're not supposed to. This will help you to better monitor your pet and keep them out of trouble.
           </div>
         </div>
         <div className='w-1/2 relative'>
@@ -84,9 +84,9 @@ const WorkProcess = () => (
         <div className='w-1/2'>Dog Image</div>
         <div className='w-1/2'>
           <div>Icon</div>
-          <div className="font-bold text-2xl pb-5 border-b-2 border-blue-800">Body Language Decoding</div>
+          <div className="font-bold text-2xl pb-5 border-b-2 border-blue-800">Dog Bark Decoding</div>
           <div className='pt-5'>
-            We use motion sensors to track tail wagging and body orientation to determine emotional context.
+            We use audio from pet cameras to capture barks along with AI trained to find specific bark patterns for individual dogs. This helps dog parents determine when their dog is barking and whether it is something they need to be concerned about.
           </div>
         </div>
       </div>
@@ -161,7 +161,7 @@ const PoweredApp = () => (
 
 const CallToAction = () => (
   <div className="flex m-10 p-10 justify-between bg-blue-400 rounded-md">
-    <div>Use our APIs to add more to your products made for</div>
+    <div><span className="text-white-500">Use our APIs to add more to your products made for</span></div>
     <div>
       <Button>Get Started</Button>
     </div>
@@ -175,7 +175,7 @@ const Footer = () => (
         <div className="font-semibold text-5xl">Sarama</div>
         <div className='flex flex-col space-y-4 font-medium pt-7'>
           <div>+1 732 309-8870</div>
-          <div>hello@aionthebeach.com</div>
+          <div>hello@sarama.xyz</div>
           <div>1235 Florida St, Unit A, San Francisco, CA</div>
         </div>
       </div>
@@ -196,14 +196,13 @@ const Footer = () => (
           <div className="font-semibold text-2xl">About Us</div>
           <div className='flex flex-col space-y-4 font-medium pt-7'>
             <Link href='/team'>Team</Link>
-            <Link href='/press'>Press</Link>
-            <Link href='/blog'>Blog</Link>
+            <Link href='#'>Blog (coming soon...)</Link>
           </div>
         </div>
       </div>
     </div>
     <div className='flex justify-center space-x-10 w-full mt-16 text-xs'>
-      <div>Copyright 2022, AI on the Beach LLC</div>
+      <div>Copyright 2022, Sarama Inc</div>
       <Link href='/privacy-policy'>Privacy Policy</Link>
       <Link href='/terms'>{'Terms & Conditions'}</Link>
     </div>
