@@ -30,18 +30,7 @@ const Hero = () => (
 )
 
 const TrustedBy = () => (
-  <div className='flex flex-col items-center m-20'>
-    <div className='font-semibold'>
-      Trusted By
-    </div>
-    <div className='flex space-x-16'>
-      <div>Tesla</div>
-      <div>Slack</div>
-      <div>Twitter</div>
-      <div>Envato</div>
-      <div>Windows</div>
-      <div>Slack Again</div>
-    </div>
+  <div className='m-5'>
   </div>
 )
 
@@ -191,14 +180,6 @@ const Footer = () => (
         </div>
       </div>
       <div className="flex space-x-24">
-        <div className="flex flex-col">
-          <div className="font-semibold text-2xl">Services</div>
-          <div className='flex flex-col space-y-4 font-medium pt-7'>
-            <Link href='/small-business'>Small Business</Link>
-            <Link href='/enterprise'>Enterprise</Link>
-            <Link href='/pricing'>Pricing</Link>
-          </div>
-        </div>
         <div className="flex flex-col">
           <div className="font-semibold text-2xl">Products</div>
           <div className='flex flex-col space-y-4 font-medium pt-7'>
