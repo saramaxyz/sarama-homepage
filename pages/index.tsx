@@ -2,37 +2,41 @@ import React from "react";
 import Link from "next/link";
 
 const Button: React.FC = (props) => (
-  <Link href="/get-started">
-    <div className="bg-gradient-to-r from-blue-500 to-blue-400 text-white rounded p-4 font-bold">
+  <Link href="/get-started" passHref>
+    <a className="text-white rounded p-4 font-bold" style={{ background: 'linear-gradient(#0066FF, #4690FF)' }}>
       {props.children}
-    </div>
+    </a>
   </Link>
 );
 
 const Hero = () => (
   <div>
-    {/* <Image
-      src="/desk.png"
-      layout="fill"
-      objectFit="cover"
-      objectPosition="center"
-      className="z-0"
-    /> */}
-    <div className="h-screen flex flex-col items-center text-white z-10 relative">
-      <div className="flex justify-between w-full m-5 p-12">
-        <div className="font-semibold text-3xl">Sarama</div>
-        <Button>Get Access</Button>
-      </div>
-      <div className="mt-32 font-bold text-5xl text-center">
-        Solution
-        <br />
-        For Your Pet
-      </div>
-      <div className="mt-6">
-        Sarama develops software to add to your dog products
-      </div>
-      <div className="mt-16">
-        <Button>Get Access</Button>
+    <div
+      className="h-screen"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("desk.png");`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        position: "relative",
+      }}
+    >
+      <div className="h-screen flex flex-col items-center text-white z-10 relative">
+        <div className="flex justify-between w-full m-5 p-12">
+          <div className="font-semibold text-3xl">Sarama</div>
+          <Button>Get Access</Button>
+        </div>
+        <div className="mt-32 font-bold text-5xl text-center">
+          Solution
+          <br />
+          For Your Pet
+        </div>
+        <div className="mt-6">
+          Sarama develops software to add to your dog products
+        </div>
+        <div className="mt-16">
+          <Button>Get Access</Button>
+        </div>
       </div>
     </div>
   </div>
@@ -57,7 +61,7 @@ const YourProducts = () => (
 
 const DogImage = () => (
   <div className="mx-auto mt-20 mb-20">
-    <img src="/holding_dog.svg" />
+    <img src="/holding_dog.svg" className="h-screen" />
   </div>
 );
 
@@ -74,7 +78,9 @@ const WorkProcess = () => (
             Body Language Decoding
           </div>
           <div className="pt-5">
-            {"We are using AI to detect what your dog is doing and whether they're doing something they're not supposed to. This will help you to better monitor your pet and keep them out of trouble."}
+            {
+              "We are using AI to detect what your dog is doing and whether they're doing something they're not supposed to. This will help you to better monitor your pet and keep them out of trouble."
+            }
           </div>
         </div>
         <div className="w-1/2 relative">
