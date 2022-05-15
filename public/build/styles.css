@@ -886,14 +886,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(71 71 71 / var(--tw-text-opacity));
 }
 
-.text-blue {
-  --tw-text-opacity: 1;
-  color: rgb(0 102 255 / var(--tw-text-opacity));
-}
-
 .text-gray100 {
   --tw-text-opacity: 1;
   color: rgb(23 23 23 / var(--tw-text-opacity));
+}
+
+.text-blue {
+  --tw-text-opacity: 1;
+  color: rgb(0 102 255 / var(--tw-text-opacity));
 }
 
 .text-gray200 {
@@ -916,49 +916,14 @@ Ensure the default browser behavior of the `hidden` attribute.
           text-decoration-line: underline;
 }
 
-.decoration-red-600 {
-  -webkit-text-decoration-color: #dc2626;
-          text-decoration-color: #dc2626;
-}
-
-.decoration-red-50 {
-  -webkit-text-decoration-color: #fef2f2;
-          text-decoration-color: #fef2f2;
-}
-
-.decoration-red-500 {
-  -webkit-text-decoration-color: #ef4444;
-          text-decoration-color: #ef4444;
-}
-
-.decoration-sky-500 {
-  -webkit-text-decoration-color: #0ea5e9;
-          text-decoration-color: #0ea5e9;
-}
-
-.decoration-sky-300 {
-  -webkit-text-decoration-color: #7dd3fc;
-          text-decoration-color: #7dd3fc;
-}
-
-.decoration-sky-900 {
-  -webkit-text-decoration-color: #0c4a6e;
-          text-decoration-color: #0c4a6e;
-}
-
-.decoration-sky-800 {
-  -webkit-text-decoration-color: #075985;
-          text-decoration-color: #075985;
-}
-
-.decoration-sky-700 {
-  -webkit-text-decoration-color: #0369a1;
-          text-decoration-color: #0369a1;
-}
-
 .decoration-sky-600 {
   -webkit-text-decoration-color: #0284c7;
           text-decoration-color: #0284c7;
+}
+
+.decoration-red-600 {
+  -webkit-text-decoration-color: #dc2626;
+          text-decoration-color: #dc2626;
 }
 
 .shadow-4xl {
