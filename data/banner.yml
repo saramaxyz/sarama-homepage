@@ -1,5 +1,5 @@
 ####################### Banner #########################
-style: "style4 orient-left content-align-right image-position-left fullscreen onload-image-fade-in onload-content-fade-right"
+style: "style4 orient-left content-align-left image-position-center fullscreen onload-image-fade-in onload-content-fade-right"
 title : "Sarama"
 subtitle: |
   Developing a new spoken language between dogs and people.
