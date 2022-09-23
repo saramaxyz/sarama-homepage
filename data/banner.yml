@@ -1,0 +1,12 @@
+####################### Banner #########################
+style: "style4 orient-left content-align-right image-position-left fullscreen onload-image-fade-in onload-content-fade-right"
+title : "Sarama"
+subtitle: |
+  Developing a new spoken language between dogs and people.
+content : |
+  Based on the latest research in dog psychology research, we’ve built a training program that teaches dogs how to bark to express their needs effectively and an app that helps you translate those needs.
+button:
+  label : "Get Started"
+  link : "#first"
+image : "images/dog-iphone.jpeg"
+

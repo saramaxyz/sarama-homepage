@@ -1,0 +1,9 @@
+####################### Spotlight #########################
+style: "style1 orient-left content-align-left image-position-center onscroll-image-fade-in"
+title : "Our teaching approach"
+content: |
+  We developed a new language learning course, think high school Spanish class for your dog.
+button: 
+  label: "Learn More"
+  link: "#"
+image: "images/spotlight02.jpg"
