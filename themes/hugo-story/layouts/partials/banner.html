@@ -1,14 +1,65 @@
 <!-- Banner -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form action="https://next.quickmail.io/opt_in/campaign/d1e27ba12f442d3236bfe59c978c848f" method="POST" class="form-inline">
+    <label class="sr-only" for="qmFormInputName">First Name</label>
+    <input name="opt_in[first_name]" required type="text" class="form-control mb-2 mr-sm-2" id="qmFormInputName" placeholder="First Name">
+    <label class="sr-only" for="qmFormInputEmail">Email</label>
+    <input name="opt_in[email]" required type="email" class="form-control mb-2 mr-sm-2" id="qmFormInputEmail" placeholder="Email">
+    <br />
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+  </form>
+  </div>
+</div>
+
 <section class="banner {{ .style }}">
     <div class="content">
         {{ with .title }}<h1>{{ . }}</h1>{{ end }}
         {{ with .subtitle }}<p class="major">{{ . | safeHTML }}</p>{{ end }}
         {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
-        {{ with .button }}<ul class="actions stacked">
-            <li><a href="{{ .link }}" class="button primary large wide smooth-scroll-middle">{{ .label }}</a></li>
-        </ul>{{ end }}
+        {{ with .button }}
+        <ul class="actions stacked">
+            <li><button id="myBtn" class="button primary large wide smooth-scroll-middle">{{ .label }}</a></li>
+        </ul>
+        {{ end }}
     </div>
     {{ with .image }}<div class="image">
         <img src="{{.}}" alt="Hugo Story" />
     </div>{{end}}
 </section>
+
+<script>
+  // self executing function here
+  (function() {
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    };
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none"
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      console.log(event.target);
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+
+  })();
+</script>
